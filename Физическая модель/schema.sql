@@ -269,9 +269,8 @@ END $$;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin_role;
 GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO admin_role;
 
--- 6.2. Права роли: dispatcher_role (Диспетчер - Привилегированный пользователь)
--- Может управлять рейсами, водителями, маршрутами и назначениями
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE Transportations, Driver_Transportations TO dispatcher_role;
+GRANT SELECT, INSERT, UPDATE ON TABLE Transportations TO dispatcher_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE Driver_Transportations TO dispatcher_role;
 GRANT SELECT, INSERT, UPDATE ON TABLE Drivers, Routes TO dispatcher_role;
 GRANT SELECT ON TABLE Users, Roles, User_Roles TO dispatcher_role;
 -- Также права на использование автоинкрементных последовательностей для INSERT
